@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ViewController {
 
 	@GetMapping("/welcome")
-	public String homePage () {
+	public String getHomePage () {
 		System.out.println("HI HERE!!");
 		return "homeview";
 		
 	}
 	
-	@GetMapping("/animals")
-	public String animalView () {
-		return "animals";
+	@GetMapping("/dogs")
+	public String getDogPage () {
+		return "dogview";
 	}
 }
