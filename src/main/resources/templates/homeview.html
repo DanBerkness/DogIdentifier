@@ -1,0 +1,19 @@
+<html xmlns:th="http://thyleaf.org">
+<head>
+<title>HomePage</title>
+</head>
+
+<body>
+	<h1>HomePage</h1>
+	<form action="" method="post">
+		<div>
+			<label>Dog Breed: </label> <input type="text"
+				th:field="${dogs.breed}">
+		</div>
+		<label>Is this dog easy to maintain? </label>
+		<div>
+			<button>Submit</button>
+		</div>
+	</form>
+</body>
+</html>

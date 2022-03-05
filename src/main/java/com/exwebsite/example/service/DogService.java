@@ -1,5 +1,7 @@
 package com.exwebsite.example.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,11 @@ public class DogService {
 	private Integer id = 1;
 	
 	public void createDog(Dog dog) {
-		
+		dog.setId(id++);
 		dogRepo.createDog(dog);
+	}
+
+	public List<Dog> findAll() {
+		return dogRepo.findAll();
 	}
 }

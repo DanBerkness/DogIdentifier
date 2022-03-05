@@ -6,6 +6,10 @@ public class Dog {
 	private String breed;
 	private Boolean easyToMaintain;
 	
+	public Dog() {
+		
+	}
+	
 	public Dog(Integer id, String breed, Boolean easyToMaintain) {
 		this.id = id;
 		this.breed = breed;
