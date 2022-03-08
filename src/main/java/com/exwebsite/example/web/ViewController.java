@@ -24,7 +24,6 @@ public class ViewController {
 		model.put("dogs", dog);
 		model.put("alldogs", dogs);
 		dogs.stream().forEach(x -> System.out.println(x));
-		System.out.println("heyyy");
 		return "homeview";
 		
 		}
