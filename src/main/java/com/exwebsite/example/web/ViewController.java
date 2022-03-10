@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.exwebsite.example.domain.Dog;
@@ -17,25 +18,34 @@ public class ViewController {
 	@Autowired
 	DogService dogService;
 	
-	@GetMapping("/welcome")
-	public String getHomePage (ModelMap model) {
+	@GetMapping("/dogs")
+	public String getDogHomePage (ModelMap model) {
 		Dog dog = new Dog();
 		List<Dog> dogs = dogService.findAll();
 		model.put("dogs", dog);
 		model.put("alldogs", dogs);
 		dogs.stream().forEach(x -> System.out.println(x));
-		return "homeview";
+		return "dogview";
 		
 		}
-	@PostMapping("/welcome")
+	@PostMapping("/dogs")
 	public String postDogPage (Dog dog) {
 		dogService.createDog(dog);
-		return "redirect:/welcome";
+		return "redirect:/dogs";
 	}
 	
-	@GetMapping("/dogs")
-	public String getDogPage () {
-		return "dogview";
+	@GetMapping("/dogs/{id}")
+	public String getDogPageById (@PathVariable Integer id, ModelMap model) {
+		Dog dog = dogService.getById(id);
+		System.out.println("hi");
+		model.put("dogs", dog);
+		return "specificdog";
+	}
+	@PostMapping("/dogs/{id}")
+	public String postDogPageById (Dog dog) {
+		dogService.createDog(dog);
+		System.out.println("hi");
+		return "redirect:/dogs";
 	}
 	
 }

@@ -1,32 +1,9 @@
 <html xmlns:th="http://thyleaf.org">
 	<head>
-		<title>HomePage</title>
+		<title>Website Home</title>
 	</head>
-
 	<body>
-		<h1>HomePage</h1>
-		<div th:each="storedDogs: ${alldogs}">
-			<span th:inline="text">
-				Dog Breed: <a th:href="@{/homeview/{dogBreed}(dogBreed=${storedDogs.id})}">[[${storedDogs.breed}]]</a> 
-				Easy to maintain: [[${storedDogs.easyToMaintain}]]
-			</span>
-		</div>
-		<form action="" method="post">
-			<div>
-				<label>Dog Breed: </label> 
-				<input type="text" th:field="${dogs.breed}">
-			</div>
-			<div>
-				<label>Is this dog easy to maintain?</label>
-			</div>
-			<div>
-				<label> Yes No</label>
-			</div>
-				<input type="radio" name="easyornot" value ="true" th:field="${dogs.easyToMaintain}">
-				<input type="radio" name="easyornot" value ="false" th:field="${dogs.easyToMaintain}" style="margin-left: 5px;">
-			<div>
-				<button>Submit</button>
-			</div>
-		</form>
+		<h1>Home</h1>
+		
 	</body>
 </html>

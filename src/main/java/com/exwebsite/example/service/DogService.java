@@ -24,4 +24,8 @@ public class DogService {
 	public List<Dog> findAll() {
 		return dogRepo.findAll();
 	}
+
+	public Dog getById(Integer id) {
+		return dogRepo.getById(id);
+	}
 }

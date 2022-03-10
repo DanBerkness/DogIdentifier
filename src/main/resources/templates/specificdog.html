@@ -1,16 +1,8 @@
-<html xmlns:th="http://thyleaf.org">
+<html xmlns:th="http://thymeleaf.org">
 	<head>
-		<title>HomePage</title>
+		<title>Dog Editor</title>
 	</head>
-
 	<body>
-		<h1>HomePage</h1>
-		<div th:each="storedDogs: ${alldogs}">
-			<span th:inline="text">
-				Dog Breed: <a th:href="@{/dogs/{dogBreed}(dogBreed=${storedDogs.id})}">[[${storedDogs.breed}]]</a> 
-				Easy to maintain: [[${storedDogs.easyToMaintain}]]
-			</span>
-		</div>
 		<form action="" method="post">
 			<div>
 				<label>Dog Breed: </label> 

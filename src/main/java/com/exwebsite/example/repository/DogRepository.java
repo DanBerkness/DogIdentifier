@@ -28,4 +28,8 @@ public class DogRepository {
 							  .map(d -> d.getValue())
 							  .collect(Collectors.toList());
 	}
+
+	public Dog getById(Integer id) {
+		return dogs.get(id);
+	}
 }
