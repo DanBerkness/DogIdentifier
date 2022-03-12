@@ -32,4 +32,8 @@ public class DogRepository {
 	public Dog getById(Integer id) {
 		return dogs.get(id);
 	}
+
+	public Dog save(Dog dog) {
+		return dogs.put(dog.getId(), dog);
+	}
 }

@@ -28,4 +28,13 @@ public class DogService {
 	public Dog getById(Integer id) {
 		return dogRepo.getById(id);
 	}
+
+	public Dog save(Dog dog) {
+		if(dog.getId() == null) {
+			dog.setId(id++);
+		}
+		return dogRepo.save(dog);
+		
+		
+	}
 }

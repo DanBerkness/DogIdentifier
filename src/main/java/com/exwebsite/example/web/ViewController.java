@@ -43,9 +43,9 @@ public class ViewController {
 	}
 	@PostMapping("/dogs/{id}")
 	public String postDogPageById (Dog dog) {
-		dogService.createDog(dog);
-		System.out.println("hi");
-		return "redirect:/dogs";
+		Dog currentDog = dogService.save(dog);
+		System.out.println(currentDog.toString());
+		return "redirect:/dogs/" + currentDog.getId();
 	}
 	
 }

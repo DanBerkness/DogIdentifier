@@ -26,6 +26,8 @@
 				<input type="radio" name="easyornot" value ="false" th:field="${dogs.easyToMaintain}" style="margin-left: 5px;">
 			<div>
 				<button>Submit</button>
+				<label th:if="${dogs.breed == null}">chicken</label>
+				<a th:href="/dogs" th:if="${dogs.id != null}">Back</a>
 			</div>
 		</form>
 	</body>

@@ -18,6 +18,8 @@
 				<input type="radio" name="easyornot" value ="false" th:field="${dogs.easyToMaintain}" style="margin-left: 5px;">
 			<div>
 				<button>Submit</button>
+				<a href="/dogs" th:if="${dogs.id != null}">Back</a>
+				<button th:if=""></button>
 			</div>
 		</form>
 	</body>
